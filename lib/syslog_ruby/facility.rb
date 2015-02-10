@@ -2,7 +2,6 @@ require 'syslog_ruby/lookup_from_const'
 
 module SyslogRuby
   module Facility
-    extend LookupFromConst
     KERN     =  0 << 3
     USER     =  1 << 3
     MAIL     =  2 << 3
@@ -28,5 +27,7 @@ module SyslogRuby
     LOCAL6   = 22 << 3
     LOCAL7   = 23 << 3
     NONE     = SYSLOG
+
+    extend LookupFromConst
   end
 end

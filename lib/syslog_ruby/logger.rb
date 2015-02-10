@@ -3,6 +3,7 @@ require 'socket'
 module SyslogRuby
   class Logger
     attr_accessor :ident, :facility, :socket, :hostname, :mask, :log_uri
+
     class << self
       def setup_severity_methods
         SyslogRuby::Severity.constants.each do |level_name|
@@ -17,10 +18,6 @@ module SyslogRuby
       end
     end
 
-    @@facilities = {}
-    @@severities = {}
-    Facility.setup_constants @@facilities
-    Severity.setup_constants @@severities
     self.setup_severity_methods
 
     def initialize(ident = 'ruby',

@@ -2,7 +2,6 @@ require 'syslog_ruby/lookup_from_const'
 
 module SyslogRuby
   module Severity
-    extend LookupFromConst
     EMERG = PANIC = 0
     ALERT = 1
     CRIT = 2
@@ -12,5 +11,7 @@ module SyslogRuby
     INFO = 6
     DEBUG = 7
     NONE = 10
+
+    extend LookupFromConst
   end
 end
